@@ -1,0 +1,24 @@
+{
+  "routes": [
+    {
+      "route": "/v1/customer/:id",
+      "method": "GET",
+      "controller": "../controllers/v1/customer/customer-controller"
+    },
+    {
+      "route": "/v1/customer",
+      "method": "POST",
+      "controller": "../controllers/v1/customer/customer-controller"
+    },
+    {
+      "route": "/v1/driver",
+      "method": "POST",
+      "controller": "../controllers/v1/driver/driver-controller"
+    },
+    {
+      "route": "/v1/rider",
+      "method": "POST",
+      "controller": "../controllers/v1/rider/rider-controller"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "OlaWebApi",
+  "version": "1.0.0",
+  "description": "Ola Auto Queueing System",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "test-coverage": "npm test && istanbul cover node_modules/mocha/bin/_mocha -- -R spec",
+    "install-local": "npm install -g mocha & npm install -g node-inspector & npm install",
+    "start": "node server.js 1 prod 127.0.0.1 3000 9000",
+    "debug": "node-debug server.js 0 dev 127.0.0.1 3000 9000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ashbits/OlaWebApi"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "Ashutosh",
+  "license": "",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.0.2",
+    "sinon": "^7.2.7"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.3",
+    "body-parser": "^1.18.3",
+    "cluster-service": "^2.1.2",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "mysql2": "^1.6.5",
+    "sequelize": "^4.43.0",
+    "throw.js": "^3.0.1",
+    "uuid": "^3.3.2"
+  }
+}
