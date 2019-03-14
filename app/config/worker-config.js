@@ -1,5 +1,7 @@
 var http = require('http');
 var express = require('express');
+var favicon = require('serve-favicon');
+var path = require('path');
 var application = express();
 var bodyParser = require('body-parser');
 var routeConfig = require('./route-config');
@@ -16,7 +18,7 @@ function configureWorker(application) {
 
 function configureApplication(application) {
   application.use(bodyParser.json());
-
+  application.use(favicon(path.join(__dirname, '../../app/public', 'favicon.ico')));
   application.use(function(req, res, next) {
     res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
     res.set('Pragma', 'no-cache');
