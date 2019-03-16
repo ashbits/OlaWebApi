@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 var routeConfig = require('./route-config');
 var settingsConfig = require('./settings/settings-config');
 var errors = require('throw.js');
-var errorMessages = require('./error.config.json');
 
 function configureWorker(application) {
   configureApplication(application);
@@ -20,6 +19,7 @@ function configureApplication(application) {
   application.use(bodyParser.json());
   application.use(favicon(path.join(__dirname, '../../app/public', 'favicon.ico')));
   application.use(function(req, res, next) {
+    console.log('requested API : ' + req.url);
     res.set('Cache-Control', 'no-cache, no-store, must-revalidate');
     res.set('Pragma', 'no-cache');
     res.set('Expires', '0');

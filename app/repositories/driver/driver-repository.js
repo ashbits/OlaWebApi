@@ -9,15 +9,12 @@ function getDriverData(id) {
 }
 
 function createDriver(driver, db) {
-  var driverModel = new Driver(db);
+  var driverModel = Driver(db);
   return db.sync()
     .then(() => driverModel.create({
       name: driver.name,
       id: uuid()
-    }))
-    .then(result => {
-      return result;
-    });
+    }));
 }
 
 DriverRepository.prototype = {

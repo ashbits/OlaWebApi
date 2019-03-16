@@ -19,6 +19,21 @@
       "route": "/v1/rider",
       "method": "POST",
       "controller": "../controllers/v1/rider/rider-controller"
+    },
+    {
+      "route": "/v1/rider",
+      "method": "GET",
+      "controller": "../controllers/v1/rider/rider-controller"
+    },
+    {
+      "route": "/v1/driver/:id/rider",
+      "method": "GET",
+      "controller": "../controllers/v1/driver/driver-rider-controller"
+    },
+    {
+      "route": "/v1/driver/rider",
+      "method": "POST",
+      "controller": "../controllers/v1/driver/driver-rider-controller"
     }
   ]
 }

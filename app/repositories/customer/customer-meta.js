@@ -1,13 +1,16 @@
 const Sequelize = require('sequelize');
 
-function customerMeta() {
-    return {
-        name: Sequelize.STRING,
-        id: {
-            type: Sequelize.STRING,
-            primaryKey: true
-        }
-    };
-}
+var customerMeta = {
+    id: {
+        allowNull: false,
+        primaryKey: true,
+        type: Sequelize.STRING
+    },
+    customerId: {
+        allowNull: false,
+        unique: true,
+        type: Sequelize.STRING
+    }
+};
 
 module.exports = customerMeta;

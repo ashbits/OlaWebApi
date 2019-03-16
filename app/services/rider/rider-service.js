@@ -4,20 +4,19 @@ function RiderService() {
   this.riderRepository = require('../../repositories/rider/rider-repository');
 }
 
-function lookupRider(id) {
-  return {
-    id: id
-  };
-}
-
 function createRider(data) {
   var self = this;
   return self.riderRepository.createRider(data, sequelize);
 }
 
+function getAllRiders() {
+  var self = this;
+  return self.riderRepository.getAllRiders(sequelize);
+}
+
 RiderService.prototype = {
-  lookupRider: lookupRider,
-  createRider : createRider
+  createRider: createRider,
+  getAllRiders: getAllRiders
 };
 
 var riderService = new RiderService();

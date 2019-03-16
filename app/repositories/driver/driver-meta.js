@@ -1,13 +1,15 @@
 const Sequelize = require('sequelize');
 
-function driverMeta() {
-    return {
-        name: Sequelize.STRING,
-        id: {
-            type: Sequelize.STRING,
-            primaryKey: true
-        }
-    };
+var driverMeta = {
+    name: {
+        allowNull: false,
+        type: Sequelize.STRING
+    },
+    id: {
+        allowNull: false,
+        type: Sequelize.STRING,
+        primaryKey: true
+    }
 }
 
 module.exports = driverMeta;

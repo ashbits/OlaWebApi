@@ -1,5 +1,5 @@
-const uuid = require('uuid/v4');
 var Customer = require('./customer-model');
+const uuid = require('uuid/v4');
 
 function CustomerRepository() {}
 
@@ -10,15 +10,12 @@ function getCustomerData(id) {
 }
 
 function createCustomer(customer, db) {
-  var customerModel = new Customer(db);
+  var customerModel = Customer(db);
   return db.sync()
     .then(() => customerModel.create({
-      name: customer.name,
-      id: uuid()
-    }))
-    .then(result => {
-      return result;
-    });
+      customerId: customer.customerId,
+      id : uuid()
+    }));
 }
 
 CustomerRepository.prototype = {
