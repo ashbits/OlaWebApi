@@ -1,16 +1,6 @@
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('testdb', 'testuser', 'password', {
-    host: 'localhost',
-    dialect: 'mysql',
-
-    pool: {
-        max: 5,
-        min: 0,
-        acquire: 30000,
-        idle: 10000
-    },
-    // http://docs.sequelizejs.com/manual/tutorial/querying.html#operators
+const sequelize = new Sequelize(process.env.CLEARDB_DATABASE_URL, {
     operatorsAliases: false
 });
 

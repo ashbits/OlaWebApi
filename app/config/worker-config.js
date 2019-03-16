@@ -9,6 +9,7 @@ var settingsConfig = require('./settings/settings-config');
 var errors = require('throw.js');
 
 function configureWorker(application) {
+  require('dotenv').config();
   configureApplication(application);
   configureRoutes(application);
   configureErrorHandler(application);
