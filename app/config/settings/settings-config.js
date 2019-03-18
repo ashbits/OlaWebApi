@@ -16,7 +16,7 @@ function initializeSettings(settings) {
 function createArgumentSettings(settings) {
   settings.clusterEnabled = commandLineArgs[2] ? parseInt(commandLineArgs[2]) : 0;
   settings.environment = commandLineArgs[3] ? commandLineArgs[3].toLowerCase() : 'prod';
-  settings.hostName = process.env.hostName || '127.0.0.1';
+  settings.hostName = process.env.hostName || 'localhost';
   settings.masterPort =  process.env.PORT || 3000;
   settings.workerPort =  process.env.PORT || 9000;
 }

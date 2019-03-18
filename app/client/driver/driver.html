@@ -1,0 +1,78 @@
+<div class="container">
+	<h2>Driver App -driver id: {{id}}</h2>
+	<button type="button" class="btn btn-primary" ng-click=getRiders()>Refresh</button>
+	<div class="row">
+		<div class="col-md-4">
+			<h3>Waiting</h3>
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="waitingRides in rideTypes.wait">
+					<div class="well" style="width: 333px;border: 2px solid black;padding: 5px;margin: -8px;">
+						<div class="row">
+							<div class="col-md-5">
+								<span>Req Id : {{waitingRides.requestId|limitTo:5}}...</span>
+							</div>
+							<div class="col-md-5">
+								<span>Cust Id :{{waitingRides.customerId|limitTo:5}}...</span>
+							</div>
+							<div class="row">
+								<span style="margin-left: 118px;">{{waitingRides.requestTime}}</span>
+							</div>
+							<div class="row">
+								<button style="margin-top: 29px;margin-left: -49px;" type="button" class="btn btn-primary" ng-click=selectRiders(waitingRides)>Select</button>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-4">
+			<h3>Ongoing</h3>
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="ongoingRides in rideTypes.ongoing">
+					<div class="well" style="width: 333px;border: 2px solid black;padding: 5px;margin: -8px;">
+						<div class="row">
+							<div class="col-md-5">
+								<span>Req Id : {{ongoingRides.requestId|limitTo:5}}...</span>
+							</div>
+							<div class="col-md-5">
+								<span>Cust Id :{{ongoingRides.customerId|limitTo:5}}...</span>
+							</div>
+							<div class="row">
+								<span style="margin-left: 118px;">Request :{{ongoingRides.requestTime}}</span>
+							</div>
+							<div class="row">
+								<span style="margin-left: 118px;">Picked Up :{{ongoingRides.pickedUpTime}}</span>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-4">
+			<h3>Completed</h3>
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="completedRides in rideTypes.completed">
+					<div class="well" style="width: 333px;border: 2px solid black;padding: 5px;margin: -8px;">
+						<div class="row">
+							<div class="col-md-5">
+								<span>Req Id : {{completedRides.requestId|limitTo:5}}...</span>
+							</div>
+							<div class="col-md-5">
+								<span>Cust Id :{{completedRides.customerId|limitTo:5}}...</span>
+							</div>
+							<div class="row">
+								<span style="margin-left: 118px;">Request :{{completedRides.requestTime}}</span>
+							</div>
+							<div class="row">
+								<span style="margin-left: 118px;">Picked Up :{{completedRides.pickedUpTime}}</span>
+							</div>
+							<div class="row">
+								<span style="margin-left: 118px;">Complete :{{completedRides.completeTime}}</span>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

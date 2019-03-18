@@ -1,7 +1,7 @@
 {
     "rideStatus": {
-        "wait": "WAITING",
-        "ongoing": "ONGOING",
-        "completed": "COMPLETED"
+        "wait": "Waiting",
+        "ongoing": "Ongoing",
+        "completed": "Completed"
     }
 }

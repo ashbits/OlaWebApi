@@ -10,9 +10,10 @@ function getDriverData(id) {
 
 function createDriver(driver, db) {
   var driverModel = Driver(db);
+  console.log(driver)
   return db.sync()
     .then(() => driverModel.create({
-      name: driver.name,
+      driverId: driver.driverId,
       id: uuid()
     }));
 }

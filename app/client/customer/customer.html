@@ -1,0 +1,23 @@
+<div class="form-group">
+    <div class="row">
+        <strong class="col-md-2" style="
+            margin-left: 112px;
+            padding-left: 82px;
+        ">
+            <label for="customer">CUSTOMER ID:</label>
+        </strong>
+        <div class="col-md-2">
+            <input type="text" class="form-control center" id="usr" ng-model ="customerId">
+        </div>
+    </div>
+    <div class="row">
+        <button type="button" class="btn btn-primary" style="
+        margin-top: 12px;
+        margin-left: 372px;"
+            ng-click=requestRide() >Ride Now</button>
+        <span ng-if="showRideSuccess" class ="ridestatus">Ride Request Successful</span>
+        <span ng-if="fillCustId" class ="ridestatus">Please fill customer Id</span>
+        <span ng-if="showRideFail" class ="ridestatus">Ride Request UnSuccessful</span>
+        <span ng-if="riderStatus" class ="ridestatus">{{status}}</span>
+    </div>
+</div>

@@ -20,10 +20,10 @@ var riderMeta = {
         type : Sequelize.STRING
     },
     rideStartTime : {
-        type : Sequelize.TIME
+        type : Sequelize.DATE
     },
     rideEndTime : {
-        type : Sequelize.TIME
+        type : Sequelize.DATE
     }
 };
 

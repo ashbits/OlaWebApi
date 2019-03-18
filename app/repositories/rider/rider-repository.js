@@ -29,7 +29,7 @@ function createRider(rider, db) {
   var riderModel = Rider(db);
   return checkRiderStatus(riderModel, rider)
     .then((resultantRider) => {
-      if (resultantRider) {
+      if (!resultantRider) {
         return db.sync()
           .then(() => {
             return riderModel.create({
@@ -47,9 +47,16 @@ function createRider(rider, db) {
 function checkRiderStatus(riderModel, rider) {
   return riderModel.findOne({
       where: {
-        rideStatus: globalConstants.rideStatus.completed,
+        [Op.or]: [{
+          rideStatus: globalConstants.rideStatus.ongoing
+        }, {
+          rideStatus: globalConstants.rideStatus.wait
+        }],
         customerId: rider.customerId
-      }
+      },
+      order: [
+        ['updatedAt', 'DESC'],
+      ],
     })
     .catch(err => {
       if (err.parent.code === "ER_NO_SUCH_TABLE") {

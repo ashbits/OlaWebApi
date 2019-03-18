@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Dashboard</h2>
+  <button type="button" class="btn btn-primary" ng-click = getRiders()>Refresh</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Request Id</th>
+        <th>Customer Id</th>
+        <th>Time Elapsed</th>
+        <th>Status</th>
+        <th>Driver</th>
+      </tr>
+    </thead>
+    <tbody ng-repeat ="rider in riders" >
+      <tr>
+        <td>{{rider.requestId}}</td>
+        <td>{{rider.customerId}}</td>
+        <td>{{rider.elapsedTime}}</td>
+        <td>{{rider.rideStatus}}</td>
+        <td>{{rider.driverId}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

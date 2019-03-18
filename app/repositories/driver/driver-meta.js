@@ -1,8 +1,9 @@
 const Sequelize = require('sequelize');
 
 var driverMeta = {
-    name: {
+    driverId: {
         allowNull: false,
+        unique: true,
         type: Sequelize.STRING
     },
     id: {

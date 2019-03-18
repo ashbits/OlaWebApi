@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <strong class="col-md-2" style="
+            margin-left: 112px;
+            padding-left: 82px;
+        ">
+      <label for="customer"> Insert New Customer Id:</label>
+    </strong>
+    <div class="col-md-2">
+      <input type="text" class="form-control center" id="usr" ng-model="customerId">
+    </div>
+  </div>
+  <div class="row">
+    <button type="button" class="btn btn-primary" style="
+          margin-top: -24px;
+    margin-bottom: 20px;
+    margin-left: 329px;"
+      ng-click=createCustomer()>Enter button</button>
+    <span ng-if="showCustomersuccess" class ="ridestatus">Customer created Successfully</span>
+    <span ng-if="showCustomererror" class ="ridestatus">Customer creation failed</span>
+    <span ng-if="customerErrorStatus" class ="ridestatus">{{customerErrorStatus}}</span>
+  </div>
+  <div class="row">
+    <strong class="col-md-2" style="
+            margin-left: 112px;
+            padding-left: 82px;
+        ">
+      <label for="customer"> Insert New Driver Id:</label>
+    </strong>
+    <div class="col-md-2">
+      <input type="text" class="form-control center" id="usr" ng-model="driverId">
+    </div>
+  </div>
+  <div class="row">
+    <button type="button" class="btn btn-primary" style="
+    margin-bottom: 20px;
+    margin-left: 329px;"
+    ng-click=createDriver()>Enter button</button>
+    <span ng-if="showDriversuccess" class ="ridestatus">Driver created Successfully</span>
+    <span ng-if="showDrivererror" class ="ridestatus">Driver creation failed</span>
+    <span ng-if="driverErrorStatus" class ="ridestatus">{{driverErrorStatus}}</span>
+  </div>
+</div>

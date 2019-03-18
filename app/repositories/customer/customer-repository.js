@@ -14,13 +14,23 @@ function createCustomer(customer, db) {
   return db.sync()
     .then(() => customerModel.create({
       customerId: customer.customerId,
-      id : uuid()
+      id: uuid()
     }));
+}
+
+function checkCustomerExist(customer, db) {
+  var customerModel = Customer(db);
+  return customerModel.findOne({
+    where: {
+      customerId: customer.customerId
+    }
+  });
 }
 
 CustomerRepository.prototype = {
   getCustomerData: getCustomerData,
-  createCustomer: createCustomer
+  createCustomer: createCustomer,
+  checkCustomerExist: checkCustomerExist
 };
 
 var customerRepository = new CustomerRepository();
